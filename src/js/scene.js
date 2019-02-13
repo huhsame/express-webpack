@@ -1,4 +1,4 @@
-
+import './components/transformControls'
 
 let doBase = 'https://wxr.nyc3.digitaloceanspaces.com/';
 let valveNameList = ['00_handle', '02_cover', '03_seal',
@@ -78,6 +78,8 @@ function createValve(){
         let id = 'valve-'+ subid;
         let entityEl = document.createElement('a-entity');
         entityEl.setAttribute('mixin',id);
+        entityEl.setAttribute('transform-controls',{activated: false});
+
         valveEl.appendChild( entityEl );
     }
     sceneEL.appendChild( valveEl );
