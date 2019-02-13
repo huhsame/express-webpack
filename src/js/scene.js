@@ -9,26 +9,35 @@ let valveIdList = ['handle', 'cover', 'seal',
 function initAScene(){
     // let sceneEL = document.createElement('a-scene');
     // document.body.appendChild( sceneEL );
-    // createCamera();
-    // createAssets();
-    // createValve();
+    // setCamera();
+    createAssets();
+    createValve();
 
-    testBox();
+    // testBox();
 }
 
+
 function testBox(){
+    //     <a-box color="red" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>
     let sceneEl = document.querySelector('a-scene');
     let boxEl = document.createElement('a-box');
+    boxEl.setAttribute('position', '0 0 0');
+    boxEl.setAttribute('rotation', '0 45 45');
+    boxEl.setAttribute('scale', '2 2 2');
+    boxEl.setAttribute('color', 'red');
+
     sceneEl.appendChild(boxEl);
 
 }
-function createCamera(){
+function setCamera(){
     let sceneEL = document.querySelector('a-scene');
     let entityEl = document.createElement('a-entity');
     entityEl.setAttribute('id', 'camera');
-    entityEl.setAttribute('position', '0 1 4');
-    entityEl.setAttribute('rotation', '-30 0 0');
-    let cameraEl = document.createElement('a-camera');
+    entityEl.setAttribute('position', '0 0 5');
+    entityEl.setAttribute('rotation', '0 0 0');
+
+
+    let cameraEl = document.querySelector('a-camera');
     entityEl.appendChild( cameraEl );
     sceneEL.appendChild( entityEl );
 
@@ -63,6 +72,7 @@ function createValve(){
     let sceneEL = document.querySelector('a-scene');
     let valveEl = document.createElement('a-entity');
     valveEl.setAttribute('id', 'valve');
+    valveEl.setAttribute('scale', '10 10 10')
 
     for( let subid of valveIdList ){
         let id = 'valve-'+ subid;
