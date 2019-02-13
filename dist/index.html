@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <title>Express and Webpack App</title>
     <link rel="shortcut icon" href="#">
+
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+
 </head>
 <body>
-    <a-scene>
+<a-scene>
 
-    </a-scene>
+    <a-entity id="camera" position ="0 2 3" rotation="-30 0 0">
+        <a-camera></a-camera>
+    </a-entity>
+
+</a-scene>
 <script type="text/javascript" src="/main.js"></script></body>
 </html>
